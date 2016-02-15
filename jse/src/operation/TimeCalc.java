@@ -14,11 +14,11 @@ public class TimeCalc {
 		 * */
 		System.out.println("초를 입력하세요.");
 		int sec = sc.nextInt();
-		int sec2 = sec;
+		
 		int min = sec / 60;
 		int hour = min / 60;
 		min %= 60;
-		sec %= 60;
-		System.out.println("입력한 " + sec2 + "초는 " + hour + "시간 " + min + "분 " + sec + "초입니다.");
+		//sec %= 60;
+		System.out.println("입력한 " + sec + "초는 " + hour + "시간 " + min + "분 " + sec%60 + "초입니다.");
 	}
 }
