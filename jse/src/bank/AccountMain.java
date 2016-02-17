@@ -7,11 +7,12 @@ public class AccountMain {
 	public static void main(String[] args) {
 		// [한빛뱅크] 홍길동 : 1234계좌, 잔고 1000원
 		AccountService service = new AccountServiceImpl();
+		AdminService service2 = new AdminServiceImpl();
 		Scanner sc = new Scanner(System.in);
 		
 		// 1. open
 		System.out.println("이름, 비밀번호 :");
-		System.out.println(service.open(sc.next(), sc.nextInt()));
+		System.out.println(service2.open(sc.next(), sc.nextInt()));
 		
 		// 2. deposit
 		System.out.println("입금액 :");

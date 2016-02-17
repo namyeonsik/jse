@@ -4,14 +4,14 @@ public class AccountServiceImpl implements AccountService{
 
 	AccountBean account = new AccountBean();
 	
-	@Override
+	/*@Override
 	public String open(String name, int password) {
 		// 1. 통장개설	
 		account.setName(name);
 		account.setPassword(password);
 		return account.toString();
 	}
-
+*/
 	@Override
 	public String deposit(int money) {
 		// 2. 입금
@@ -21,19 +21,23 @@ public class AccountServiceImpl implements AccountService{
 
 	@Override
 	public String withdraw(int money) {
-		// 3. 출금		
-		if(account.getMoney() < money)
-			System.out.println("잔액부족");
-		else
-			account.setMoney(account.getMoney() - money);
+		// 3. 출금		 ALT + SHIFT + M : 메소드로 추출하는 단축키
 		
-		return account.toString();
+		return (account.getMoney() >= money)? this.saveMoney(money): "잔액 부족";
+	}
+
+	private String saveMoney(int money) {
+		String result;
+		account.setMoney(account.getMoney() - money);
+		result = "잔액 : " + account.getMoney();
+		
+		return result;			
 	}
 
 	@Override
 	public String search() {
 		// 4. 조회
-		return account.toString();
+		return "잔액 : " + account.getMoney() + "(원)";
 	}
 
 }

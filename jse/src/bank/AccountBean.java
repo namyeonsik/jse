@@ -14,7 +14,7 @@ public class AccountBean {
 	// 멤버메소드 에어리어(멤버메소드를 정의한 영역)
 	public AccountBean(){	// 생성자
 		// 4자리 수의 랜덤한 숫자
-		accountNo = (int) (Math.random()*9999 + 1000);
+		accountNo = (int) (Math.random()*9000) + 1000;
 	}
 	// 멤변에 값을 입력하고, 조회할 수 있는 메소드인 getter/setter생성
 	// 단축키 ALT + SHIFT + S + R
